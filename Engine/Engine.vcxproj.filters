@@ -1,17 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{d1e0bcda-ffbf-4f3b-9c3a-1397cdfb721d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Core">
+      <UniqueIdentifier>{7ef490c8-3b53-4c0f-8c6b-30a40d345a3d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="리소스 파일">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Global">
+      <UniqueIdentifier>{4387d119-4a70-4cb8-ae4c-71058946b7b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{ee1584ff-faf0-4775-b26a-e23a7c2470b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Component">
+      <UniqueIdentifier>{31cb0555-1ecd-404d-815c-1f0e54293c64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{b3a9415b-080a-4216-802a-e67bd42fdbb4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Sources\Core\ConsoleEngine.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Global\Enums.cpp">
+      <Filter>Global</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Resource\Image.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Object\Actor.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Object\ActorVector.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Object\Component\Renderer.cpp">
+      <Filter>Object\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Platform\Window.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sources\Core\ConsoleEngine.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Global\Enums.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Resource\Image.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Object\Actor.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Object\ActorVector.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Object\Component\Renderer.h">
+      <Filter>Object\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Platform\Window.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{de39bad9-357f-43e3-81b5-fef3f04ce9c6}</ProjectGuid>
-    <RootNamespace>Engine</RootNamespace>
+    <ProjectGuid>{c1c553de-b0a0-4f69-8ec4-f197b95f16f1}</ProjectGuid>
+    <RootNamespace>Tetris</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -104,7 +104,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\Sources\;..\BaseSystem\Sources\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -119,7 +118,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\Sources\;..\BaseSystem\Sources\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,22 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Sources\Core\ConsoleEngine.cpp" />
-    <ClCompile Include="Sources\Global\Enums.cpp" />
-    <ClCompile Include="Sources\Object\Actor.cpp" />
-    <ClCompile Include="Sources\Object\ActorVector.cpp" />
-    <ClCompile Include="Sources\Object\Component\Renderer.cpp" />
-    <ClCompile Include="Sources\Platform\Window.cpp" />
-    <ClCompile Include="Sources\Resource\Image.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Sources\Core\ConsoleEngine.h" />
-    <ClInclude Include="Sources\Global\Enums.h" />
-    <ClInclude Include="Sources\Object\Actor.h" />
-    <ClInclude Include="Sources\Object\ActorVector.h" />
-    <ClInclude Include="Sources\Object\Component\Renderer.h" />
-    <ClInclude Include="Sources\Platform\Window.h" />
-    <ClInclude Include="Sources\Resource\Image.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
