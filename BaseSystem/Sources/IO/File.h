@@ -12,16 +12,16 @@
 
 const int MAXPATH = 256;
 
-class LFile
+class UEngineFile
 {
 	// 하드코딩 
 public:
-	LFile();
-	~LFile();
+	UEngineFile();
+	~UEngineFile();
 
 	inline void SetPath(const char* _Path)
 	{
-		strcpy_s(path_, _Path);
+		strcpy_s(Path, _Path);
 	}
 
 	// 그런거야 Is 
@@ -39,7 +39,7 @@ public:
 	void Write(const void* _Ptr, size_t _Size);
 	void Read(void* _Ptr, size_t _Size);
 
-	void FileOpen(const char* mode);
+	void FileOpen(const char* _Mode);
 	bool IsExits();
 	void Close();
 
@@ -49,7 +49,7 @@ private:
 	// _MAX_DIR 윈도우에 의존적인 프로그램
 
 
-	char path_[MAXPATH] = "";
-	FILE* file_ = nullptr;
+	char Path[MAXPATH] = "";
+	FILE* File = nullptr;
 };
 

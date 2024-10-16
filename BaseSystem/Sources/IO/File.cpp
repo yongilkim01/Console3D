@@ -1,85 +1,85 @@
 #include "File.h"
 #include "DebugHelper/Debug.h"
 
-LFile::LFile()
+UEngineFile::UEngineFile()
 {
 
 
 }
 
-LFile::~LFile()
+UEngineFile::~UEngineFile()
 {
 	// 소멸자를 이용해서 자연스럽게 파괴되도록 만드는게 좋다.
 	Close();
 }
 
-void LFile::FileOpen(const char* mode)
+void UEngineFile::FileOpen(const char* _Mode)
 {
-	fopen_s(&file_, path_, mode);
+	fopen_s(&File, Path, _Mode);
 
 	// 방어코드
 	// 파일을 열지 못했다.
-	if (nullptr == file_)
+	if (nullptr == File)
 	{
 		// char [] Arr0
 		// char [] Arr1
 		// Arr0 + Arr1
 
-		MSGASSERT(path_ /*+ "파일 오픈에 실패했습니다"*/);
+		MSGASSERT(Path /*+ "파일 오픈에 실패했습니다"*/);
 	}
 }
 
 
-void LFile::Write(const void* ptr, size_t size)
+void UEngineFile::Write(const void* _Ptr, size_t _Size)
 {
-	if (0 == size)
+	if (0 == _Size)
 	{
 		MSGASSERT("크기가 0인 데이터를 쓸수는 없습니다.");
 	}
 
-	if (nullptr == ptr)
+	if (nullptr == _Ptr)
 	{
 		MSGASSERT("존재하지 않는 메모리를 사용하려고 했습니다.");
 	}
 
 	// w일 경우에 대한 예외처리
-	if (nullptr == file_)
+	if (nullptr == File)
 	{
 		MSGASSERT("열지 않은 파일에 내용을 쓰려고 했습니다");
 		return;
 	}
 
-	fwrite(ptr, size, 1, file_);
+	fwrite(_Ptr, _Size, 1, File);
 }
 
-void LFile::Read(void* ptr, size_t size)
+void UEngineFile::Read(void* _Ptr, size_t _Size)
 {
-	if (0 == size)
+	if (0 == _Size)
 	{
 		MSGASSERT("크기가 0인 데이터를 읽을수는 없습니다.");
 	}
 
-	if (nullptr == ptr)
+	if (nullptr == _Ptr)
 	{
 		MSGASSERT("존재하지 않는 메모리를 읽으려고 했습니다.");
 	}
 
-	if (nullptr == file_)
+	if (nullptr == File)
 	{
 		MSGASSERT("열지 않은 파일에 내용을 쓰려고 했습니다");
 		return;
 	}
 
-	fread(ptr, size, 1, file_);
+	fread(_Ptr, _Size, 1, File);
 }
 
 // 인라인은 구현과 선언을분리하면 인라인을 하기 힘듭니다.
-bool LFile::IsExits()
+bool UEngineFile::IsExits()
 {
-	int result = _access(path_, 00);
+	int Result = _access(Path, 00);
 
 	// 0이면 있는것 0 이외의 값이면 없는 것
-	return 0 == result;
+	return 0 == Result;
 }
 
 
@@ -88,13 +88,13 @@ bool LFile::IsExits()
 // 시작한다.
 // 사용한다.
 // 끝낸다
-void LFile::Close()
+void UEngineFile::Close()
 {
 	// 방어코드
-	if (nullptr != file_)
+	if (nullptr != File)
 	{
-		fclose(file_);
-		file_ = nullptr;
+		fclose(File);
+		File = nullptr;
 	}
 }
 

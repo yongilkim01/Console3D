@@ -1,5 +1,5 @@
 #pragma once
-#include <Math/Math.h>
+#include <..\..\BaseSystem\Sources\Math\Math.h>
 #include "Resource/Image.h"
 
 

@@ -3,8 +3,8 @@
 class FIntPoint
 {
 public:
-	int x_ = 0;
-	int y_ = 0;
+	int X = 0;
+	int Y = 0;
 
 	static const FIntPoint LEFT;
 	static const FIntPoint RIGHT;
@@ -16,35 +16,35 @@ public:
 
 	}
 
-	FIntPoint(int x, int y) : x_(x), y_(y)
+	FIntPoint(int _X, int _Y) : X(_X), Y(_Y)
 	{
 
 	}
 
-	FIntPoint operator+(FIntPoint other) const
+	FIntPoint operator+(FIntPoint _Other) const
 	{
-		FIntPoint result;
-		result.x_ = x_ + other.x_;
-		result.y_ = y_ + other.y_;
-		return result;
+		FIntPoint Result;
+		Result.X = X + _Other.X;
+		Result.Y = Y + _Other.Y;
+		return Result;
 	}
 
-	bool operator==(FIntPoint other) const
+	bool operator==(FIntPoint _Other) const
 	{
-		return x_ == other.x_ && y_ == other.y_;
+		return X == _Other.X && Y == _Other.Y;
 	}
 
-	FIntPoint& operator+=(FIntPoint other)
+	FIntPoint& operator+=(FIntPoint _Other)
 	{
-		x_ += other.x_;
-		y_ += other.y_;
+		X += _Other.X;
+		Y += _Other.Y;
 		return *this;
 	}
 
 
 };
 
-class FMath
+class EngineMath
 {
 };
 

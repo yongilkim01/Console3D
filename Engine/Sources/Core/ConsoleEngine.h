@@ -1,14 +1,21 @@
 #pragma once
-#include "Object/ActorVector.h"
+#include <vector>
 
 class ConsoleEngine
 {
 public:
-	static void Start();
+	static void Start(class UserInit* _Init);
+
+	// static void Start(void(*Ptr)(ConsoleEngine* _Engine));
 
 	static ConsoleEngine& GetEngine()
 	{
 		return *MainEngine;
+	}
+
+	class UConsoleWindow* GetWindow()
+	{
+		return Window;
 	}
 
 	template<typename ActorType>
@@ -37,12 +44,22 @@ private:
 	class UConsoleWindow* Window;
 	bool EngineActive = true;
 
-	ActorVector AllActorVector;
+	// 전방선언도 안해줘도 된다.
+	std::vector<class AActor*> AllActorVector;
 
 	void BeginPlay(); // 움직인다.
 	void Tick(); // 움직인다.
 	void Render(); // 그린다.
 
 	void End();
+};
+
+// 인터페이스를 제공하용도 유저가 공부해야 한다.
+class UserInit
+{
+public:
+	// 경험이 있는 사람은 이걸 보고 깨닫습니다.
+	// 
+	virtual void UserBeginPlay(ConsoleEngine* _MainEngine) = 0;
 };
 

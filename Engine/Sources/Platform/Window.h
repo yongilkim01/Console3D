@@ -1,5 +1,6 @@
 #pragma once
 #include "Resource/Image.h"
+#include <../../BaseSystem/Sources/Math/Math.h>
 
 class UConsoleWindow
 {
@@ -47,6 +48,16 @@ public:
 	ConsoleImage& GetBackBufferRef()
 	{
 		return BackBuffer;
+	}
+
+	int GetWindowSizeX()
+	{
+		return BackBuffer.GetImageSize().X;
+	}
+
+	int GetWindowSizeY()
+	{
+		return BackBuffer.GetImageSize().Y;
 	}
 
 private:

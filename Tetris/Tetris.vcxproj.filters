@@ -1,2 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" />
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Sources\Block.cpp" />
+    <ClCompile Include="Sources\TetrisInit.cpp" />
+    <ClCompile Include="BackgroundWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sources\Block.h" />
+    <ClInclude Include="Sources\TetrisInit.h" />
+    <ClInclude Include="BackgroundWindow.h" />
+  </ItemGroup>
+</Project>
