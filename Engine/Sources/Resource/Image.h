@@ -57,6 +57,11 @@ public:
 		return Pixels[_Y][_X];
 	}
 
+	inline char* GetPixelRef(int _X, int _Y)
+	{
+		return &(Pixels[_Y][_X]);
+	}
+
 	inline FIntPoint GetImageSize() const
 	{
 		return ImageSize;

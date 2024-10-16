@@ -33,10 +33,6 @@ void BackgroundWindow::Tick()
 
 bool BackgroundWindow::IsLineFull(int _Y)
 {
-	if (_Y == 9)
-	{
-		int a = 10;
-	}
 	for (int X = 0; X < Window->GetWindowSizeX(); X++)
 	{
 		if (GetImageRenderer()->RenderImage.GetPixel(X, _Y) == InitPixel)
@@ -44,7 +40,6 @@ bool BackgroundWindow::IsLineFull(int _Y)
 			return false;
 		}
 	}
-
 	return true;
 }
 
