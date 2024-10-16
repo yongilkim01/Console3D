@@ -1,5 +1,6 @@
 #pragma once
 #include <Object/Actor.h>
+#include <../../BaseSystem/Sources/Math/Math.h>
 
 class Block : public AActor
 {
@@ -8,7 +9,7 @@ public:
 	void Tick() override;
 
 private:
-	class ConsoleEngine* engine = nullptr;
-	class UConsoleWindow* window = nullptr;
+	class ConsoleEngine* Engine = nullptr;
+	FIntPoint SpawnPos = { 1, 0 };
 };
 

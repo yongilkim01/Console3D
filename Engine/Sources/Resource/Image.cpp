@@ -14,7 +14,6 @@ void ConsoleImage::Create(int _X, int _Y, char _BaseChar)
 {
 	// 리스트 이니셜라이저
 	ImageSize = { _X, _Y };
-	ChangePixelPos.reserve(_X * _Y);
 	// 얼마
 	// Arr = new char* [_Y];
 	Pixels.resize(_Y);
@@ -36,11 +35,6 @@ void ConsoleImage::Clear(char _Clearchar)
 		}
 		// 마지막라인에 0을 넣는다.
 		Pixels[y][ImageSize.X] = 0;
-	}
-
-	for (size_t i = 0; i < ChangePixelPos.size(); i++)
-	{
-		Pixels[ChangePixelPos[i].Y][ChangePixelPos[i].X] = '@';
 	}
 }
 

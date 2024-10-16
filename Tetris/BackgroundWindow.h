@@ -4,11 +4,16 @@
 class BackgroundWindow : public AActor
 {
 public:
+	static BackgroundWindow* BackWindow;
+
 	void BeginPlay() override;
 	void Tick() override;
 
+	bool IsLineFull(int _Y);
+	void SetLinePixel(int _Y, char _PiexelValue);
 private:
-	class ConsoleEngine* engine = nullptr;
-	class UConsoleWindow* window = nullptr;
-};
+	class ConsoleEngine* Engine = nullptr;
+	class UConsoleWindow* Window = nullptr;
 
+	char InitPixel = '.';
+};

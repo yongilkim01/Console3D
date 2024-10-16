@@ -6,6 +6,7 @@
 
 void TetrisInit::UserBeginPlay(ConsoleEngine* _MainEngine)
 {
-	_MainEngine->GetWindow()->SetScreenSize({ 5, 13 });
+	_MainEngine->GetWindow()->SetScreenSize({ 3, 10 });
 	_MainEngine->SpawnActor<BackgroundWindow>();
+	_MainEngine->SpawnActor<Block>();
 }
