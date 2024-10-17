@@ -1,7 +1,6 @@
 #include "Actor.h"
 #include "Component/Renderer.h"
 
-
 void AActor::BeginPlay()
 {
 }
@@ -40,4 +39,10 @@ void AActor::SetActorLocation(FIntPoint _Pos)
 void AActor::AddActorLocation(FIntPoint _Dir)
 {
 	Pos += _Dir;
+}
+
+void AActor::Destroy()
+{
+	DestoryValue = true;
+	return;
 }

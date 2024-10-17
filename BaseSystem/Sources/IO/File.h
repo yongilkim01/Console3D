@@ -52,4 +52,3 @@ private:
 	char Path[MAXPATH] = "";
 	FILE* File = nullptr;
 };
-

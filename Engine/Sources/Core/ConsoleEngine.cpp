@@ -34,6 +34,7 @@ void ConsoleEngine::Start(class UserInit* _Init)
 	{
 		Engine.Tick();
 		Engine.Render();
+		Engine.Release(); // 한프레임의 모든 과정이 끝났을때
 		Sleep(250);
 	}
 
@@ -65,7 +66,18 @@ void ConsoleEngine::Tick()
 {
 	for (size_t i = 0; i < AllActorVector.size(); i++)
 	{
+		if (false == AllActorVector[i]->IsTickable())
+		{
+			continue;
+		}
+
 		AllActorVector[i]->Tick();
+
+		// 예상안됨
+		//if (true == AllActorVector[i]->IsDestory())
+		//{
+		//	delete AllActorVector[i];
+		//}
 	}
 }
 
@@ -76,8 +88,30 @@ void ConsoleEngine::Render()
 	ConsoleImage* BackBufferPtr = Window->GetBackBufferPtr();
 	for (size_t i = 0; i < AllActorVector.size(); i++)
 	{
+		if (false == AllActorVector[i]->IsTickable())
+		{
+			continue;
+		}
+
 		AllActorVector[i]->Render(BackBufferPtr);
 	}
 
 	Window->ScreenRender();
+}
+
+void ConsoleEngine::Release()
+{
+	// tick도 끝나고
+	// 랜더도 끝나고
+	for (size_t i = 0; i < AllActorVector.size(); i++)
+	{
+		if (false == AllActorVector[i]->IsDestory())
+		{
+			continue;
+		}
+
+		// 벡터는 구멍이 뚫립니다.
+		delete AllActorVector[i];
+		AllActorVector[i] = nullptr;
+	}
 }
